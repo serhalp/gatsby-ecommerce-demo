@@ -71,3 +71,12 @@ const BlogPage = (props) => {
 };
 
 export default BlogPage;
+
+export async function getServerData() {
+  console.log('getServerData');
+  return {
+    props: {
+      hello: 'from the server',
+    },
+  };
+}
