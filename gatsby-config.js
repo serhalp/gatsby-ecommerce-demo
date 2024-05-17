@@ -4,4 +4,15 @@ module.exports = {
     siteUrl: `https://jamm.matter.design`,
   },
   plugins: [],
+  headers: [
+    {
+      source: '/blog/*',
+      headers: [
+        {
+          key: 'x-custom-header',
+          value: 'Hello World',
+        },
+      ],
+    },
+  ],
 };
