@@ -78,5 +78,10 @@ export async function getServerData() {
     props: {
       hello: 'from the server',
     },
+    headers: {
+      'Cache-Control': 'public, max-age=0, must-revalidate',
+      'Netlify-CDN-Cache-Control': 'public, max-age=31536000',
+      'Cache-Tag': 'dynamicThingy',
+    },
   };
 }
