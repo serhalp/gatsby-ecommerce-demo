@@ -20,7 +20,7 @@ const BlogPage = (props) => {
         <Hero
           maxWidth={'400px'}
           image={toOptimizedImage('/blogCover.png')}
-          title={`The new standard of Closing`}
+          title={`Dynamic thingy: ${props.dynamicThingy}`}
           ctaLink={'read story'}
           ctaTo={'/blog/sample'}
           header={'design'}
@@ -73,10 +73,10 @@ const BlogPage = (props) => {
 export default BlogPage;
 
 export async function getServerData() {
-  console.log('getServerData');
+  const dynamicThingy = new Date().getSeconds();
   return {
     props: {
-      hello: 'from the server',
+      dynamicThingy,
     },
     headers: {
       'Cache-Control': 'public, max-age=0, must-revalidate',
